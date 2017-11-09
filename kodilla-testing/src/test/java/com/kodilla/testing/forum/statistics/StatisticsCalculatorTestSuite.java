@@ -10,6 +10,14 @@ import java.util.Arrays;
 
 public class StatisticsCalculatorTestSuite {
 
+    private Statistics getStatisticsMock(ArrayList<String> userNames, int postsCount, int commentsCount) {
+        Statistics statisticsMock = Mockito.mock(Statistics.class);
+        Mockito.when(statisticsMock.usersNames()).thenReturn(userNames);
+        Mockito.when(statisticsMock.postsCount()).thenReturn(postsCount);
+        Mockito.when(statisticsMock.commentsCount()).thenReturn(commentsCount);
+        return statisticsMock;
+    }
+
     @Test
     public void testCalculateAdvStatisticsNoPosts() {
         //Given
@@ -18,10 +26,7 @@ public class StatisticsCalculatorTestSuite {
         ArrayList<String> users = new ArrayList<String>(Arrays.asList(arrayUsers));
         int posts = 0;
         int comments = 0;
-        Statistics statisticsMock = Mockito.mock(Statistics.class);
-        Mockito.when(statisticsMock.usersNames()).thenReturn(users);
-        Mockito.when(statisticsMock.postsCount()).thenReturn(posts);
-        Mockito.when(statisticsMock.commentsCount()).thenReturn(comments);
+        Statistics statisticsMock = getStatisticsMock(users, posts, comments);
 
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
@@ -41,10 +46,7 @@ public class StatisticsCalculatorTestSuite {
         ArrayList<String> users = new ArrayList<String>(Arrays.asList(arrayUsers));
         int posts = 1000;
         int comments = 500;
-        Statistics statisticsMock = Mockito.mock(Statistics.class);
-        Mockito.when(statisticsMock.usersNames()).thenReturn(users);
-        Mockito.when(statisticsMock.postsCount()).thenReturn(posts);
-        Mockito.when(statisticsMock.commentsCount()).thenReturn(comments);
+        Statistics statisticsMock = getStatisticsMock(users, posts, comments);
 
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
@@ -64,10 +66,7 @@ public class StatisticsCalculatorTestSuite {
         ArrayList<String> users = new ArrayList<String>(Arrays.asList(arrayUsers));
         int posts = 456;
         int comments = 0;
-        Statistics statisticsMock = Mockito.mock(Statistics.class);
-        Mockito.when(statisticsMock.usersNames()).thenReturn(users);
-        Mockito.when(statisticsMock.postsCount()).thenReturn(posts);
-        Mockito.when(statisticsMock.commentsCount()).thenReturn(comments);
+        Statistics statisticsMock = getStatisticsMock(users, posts, comments);
 
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
@@ -89,10 +88,7 @@ public class StatisticsCalculatorTestSuite {
         ArrayList<String> users = new ArrayList<String>(Arrays.asList(arrayUsers));
         int posts = 20;
         int comments = 10;
-        Statistics statisticsMock = Mockito.mock(Statistics.class);
-        Mockito.when(statisticsMock.usersNames()).thenReturn(users);
-        Mockito.when(statisticsMock.postsCount()).thenReturn(posts);
-        Mockito.when(statisticsMock.commentsCount()).thenReturn(comments);
+        Statistics statisticsMock = getStatisticsMock(users, posts, comments);
 
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
@@ -110,10 +106,7 @@ public class StatisticsCalculatorTestSuite {
         ArrayList<String> users = new ArrayList<String>(Arrays.asList(arrayUsers));
         int posts = 25;
         int comments = 50;
-        Statistics statisticsMock = Mockito.mock(Statistics.class);
-        Mockito.when(statisticsMock.usersNames()).thenReturn(users);
-        Mockito.when(statisticsMock.postsCount()).thenReturn(posts);
-        Mockito.when(statisticsMock.commentsCount()).thenReturn(comments);
+        Statistics statisticsMock = getStatisticsMock(users, posts, comments);
 
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
@@ -130,10 +123,7 @@ public class StatisticsCalculatorTestSuite {
         ArrayList<String> users = new ArrayList<String>();
         int posts = 0;
         int comments = 0;
-        Statistics statisticsMock = Mockito.mock(Statistics.class);
-        Mockito.when(statisticsMock.usersNames()).thenReturn(users);
-        Mockito.when(statisticsMock.postsCount()).thenReturn(posts);
-        Mockito.when(statisticsMock.commentsCount()).thenReturn(comments);
+        Statistics statisticsMock = getStatisticsMock(users, posts, comments);
 
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
@@ -160,10 +150,7 @@ public class StatisticsCalculatorTestSuite {
         ArrayList<String> users = new ArrayList<String>(Arrays.asList(arrayUsers));
         int posts = 1000;
         int comments = 2000;
-        Statistics statisticsMock = Mockito.mock(Statistics.class);
-        Mockito.when(statisticsMock.usersNames()).thenReturn(users);
-        Mockito.when(statisticsMock.postsCount()).thenReturn(posts);
-        Mockito.when(statisticsMock.commentsCount()).thenReturn(comments);
+        Statistics statisticsMock = getStatisticsMock(users, posts, comments);
 
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
