@@ -11,7 +11,6 @@ public class OddNumbersExterminator {
                 .filter(number -> number % 2 == 0)
                 .collect(Collectors.toCollection(ArrayList::new));
 
-
         return result;
     }
 }
