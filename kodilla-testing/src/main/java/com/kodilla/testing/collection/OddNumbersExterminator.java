@@ -1,17 +1,17 @@
 package com.kodilla.testing.collection;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class OddNumbersExterminator {
 
     public ArrayList<Integer> exterminate(ArrayList<Integer> numbers) {
 
-        for (int i = numbers.size() - 1; i >= 0; i--) {
-            if (numbers.get(i) % 2 != 0) {
-                numbers.remove(i);
-            }
-        }
+        ArrayList<Integer> result = numbers.stream()
+                .filter(number -> number % 2 == 0)
+                .collect(Collectors.toCollection(ArrayList::new));
 
-        return numbers;
+
+        return result;
     }
 }
