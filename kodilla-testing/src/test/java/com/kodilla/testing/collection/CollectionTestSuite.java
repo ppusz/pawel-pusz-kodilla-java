@@ -26,23 +26,29 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorEmptyList() {
         //Given
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-        //When
         ArrayList<Integer> numbers = new ArrayList<Integer>();
         System.out.println("Testing ArrayList " + numbers);
+
+        //When
+        boolean isEmpty = oddNumbersExterminator.exterminate(numbers).isEmpty();
+
         //Then
-        Assert.assertTrue( oddNumbersExterminator.exterminate(numbers).isEmpty() );
+        Assert.assertTrue( isEmpty );
     }
 
     @Test
     public void testOddNumbersExterminatorNormalList() {
         //Given
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-        //When
         Integer[] testNumbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         ArrayList<Integer> numbers = new ArrayList<Integer>(Arrays.asList(testNumbers));
         System.out.println("Testing ArrayList " + numbers);
+
+        //When
+        ArrayList<Integer> onlyOddNumbers = oddNumbersExterminator.exterminate(numbers);
+
         //Then
         Integer[] expectedNumbers = {0, 2, 4, 6, 8, 10};
-        Assert.assertArrayEquals(expectedNumbers, oddNumbersExterminator.exterminate(numbers).toArray());
+        Assert.assertArrayEquals(expectedNumbers, onlyOddNumbers.toArray());
     }
 }
