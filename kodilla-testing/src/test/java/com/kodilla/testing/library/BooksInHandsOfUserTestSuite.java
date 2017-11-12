@@ -12,11 +12,12 @@ public class BooksInHandsOfUserTestSuite {
 
     private LibraryUser dummyLibraryUser;
     private LibraryDatabase mockLibraryDatabase;
+    private BookLibrary library;
 
     private List<Book> generateListOfNBooks(int booksCount) {
         List<Book> resultListOfBooks = new ArrayList<>();
         for (int i = 0; i < booksCount; i++) {
-            resultListOfBooks.add(new Book("Title " + i,"Author " + i,1900 + (i % 118 )));
+            resultListOfBooks.add(new Book("Title " + i,"Author " + i, 1900 + (i % 118 )));
         }
         return resultListOfBooks;
     }
@@ -26,12 +27,12 @@ public class BooksInHandsOfUserTestSuite {
         dummyLibraryUser = new LibraryUser("first name", "last name", "pesel");
         mockLibraryDatabase = mock(LibraryDatabase.class);
         when(mockLibraryDatabase.listBooksInHandsOf(dummyLibraryUser)).thenReturn(new ArrayList<Book>());
+        library = new BookLibrary(mockLibraryDatabase);
     }
 
     @Test
     public void testListBooksInHandsOfNoBooksLent() {
         //Given
-        BookLibrary library = new BookLibrary(mockLibraryDatabase);
 
         //When
         List<Book> listOf0Books = library.listBooksInHandsOf(dummyLibraryUser);
@@ -43,7 +44,6 @@ public class BooksInHandsOfUserTestSuite {
     @Test
     public void testListBooksInHandsOf1Book() {
         //Given
-        BookLibrary library = new BookLibrary(mockLibraryDatabase);
         List<Book> resultListOfBooks = generateListOfNBooks(1);
         when(mockLibraryDatabase.listBooksInHandsOf(dummyLibraryUser)).thenReturn(resultListOfBooks);
 
@@ -57,7 +57,6 @@ public class BooksInHandsOfUserTestSuite {
     @Test
     public void testListBooksInHandsOf5Books() {
         //Given
-        BookLibrary library = new BookLibrary(mockLibraryDatabase);
         List<Book> resultListOfBooks = generateListOfNBooks(5);
         when(mockLibraryDatabase.listBooksInHandsOf(dummyLibraryUser)).thenReturn(resultListOfBooks);
 

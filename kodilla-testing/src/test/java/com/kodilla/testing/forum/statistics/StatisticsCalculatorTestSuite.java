@@ -10,6 +10,7 @@ import java.util.Arrays;
 public class StatisticsCalculatorTestSuite {
 
     private Statistics statisticsMock;
+    private StatisticsCalculator statisticsCalculator;
 
     @Before
     public void setUp() throws Exception {
@@ -22,12 +23,13 @@ public class StatisticsCalculatorTestSuite {
         Mockito.when(statisticsMock.usersNames()).thenReturn(usersNames);
         Mockito.when(statisticsMock.postsCount()).thenReturn(postsCount);
         Mockito.when(statisticsMock.commentsCount()).thenReturn(commentsCount);
+
+        statisticsCalculator = new StatisticsCalculator();
     }
 
     @Test
     public void testCalculateAdvStatisticsNoPosts() {
         //Given
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
@@ -42,7 +44,6 @@ public class StatisticsCalculatorTestSuite {
     @Test
     public void testCalculateAdvStatisticsPostsExist() {
         //Given
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
         int posts = 1000;
         Mockito.when(statisticsMock.postsCount()).thenReturn(posts);
 
@@ -59,7 +60,6 @@ public class StatisticsCalculatorTestSuite {
     @Test
     public void testCalculateAdvStatisticsNoComments() {
         //Given
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
@@ -76,7 +76,6 @@ public class StatisticsCalculatorTestSuite {
     @Test
     public void testCalculateAdvStatisticsLessCommentsThanPosts() {
         //Given
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
         int posts = 20;
         int comments = 10;
         Mockito.when(statisticsMock.postsCount()).thenReturn(posts);
@@ -93,7 +92,6 @@ public class StatisticsCalculatorTestSuite {
     @Test
     public void testCalculateAdvStatisticsMoreCommentsThanPosts() {
         //Given
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
         int posts = 25;
         int comments = 50;
         Mockito.when(statisticsMock.postsCount()).thenReturn(posts);
@@ -110,7 +108,6 @@ public class StatisticsCalculatorTestSuite {
     @Test
     public void testCalculateAdvStatisticsNoUsers() {
         //Given
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
         ArrayList<String> users = new ArrayList<String>();
         Mockito.when(statisticsMock.usersNames()).thenReturn(users);
 
@@ -131,7 +128,6 @@ public class StatisticsCalculatorTestSuite {
     @Test
     public void testCalculateAdvStatisticsUsersExist() {
         //Given
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
         String[] arrayUsers = new String[100];
         for (int i = 0; i < arrayUsers.length; i++) {
             arrayUsers[i] = "User " + (i + 1);
