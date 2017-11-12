@@ -29,8 +29,6 @@ public class StatisticsCalculatorTestSuite {
 
     @Test
     public void testCalculateAdvStatisticsNoPosts() {
-        //Given
-
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
         int postsCount = statisticsCalculator.getPostsCount();
@@ -59,8 +57,6 @@ public class StatisticsCalculatorTestSuite {
 
     @Test
     public void testCalculateAdvStatisticsNoComments() {
-        //Given
-
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
         int commentsCount = statisticsCalculator.getCommentsCount();

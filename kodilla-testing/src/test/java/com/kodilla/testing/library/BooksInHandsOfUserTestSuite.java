@@ -32,8 +32,6 @@ public class BooksInHandsOfUserTestSuite {
 
     @Test
     public void testListBooksInHandsOfNoBooksLent() {
-        //Given
-
         //When
         List<Book> listOf0Books = library.listBooksInHandsOf(dummyLibraryUser);
 
