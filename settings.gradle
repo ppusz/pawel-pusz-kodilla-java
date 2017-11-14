@@ -1,4 +1,4 @@
 include 'kodilla-testing'
-include 'test'
-include 'testowymodul'
+include 'bbb'
+include 'kodilla-stream'
 
