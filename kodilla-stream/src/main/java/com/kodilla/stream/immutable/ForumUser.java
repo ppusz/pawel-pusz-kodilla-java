@@ -10,6 +10,7 @@ public final class ForumUser {
         this.realName = realName;
     }
 
+
     public String getUsername() {
         return username;
     }
