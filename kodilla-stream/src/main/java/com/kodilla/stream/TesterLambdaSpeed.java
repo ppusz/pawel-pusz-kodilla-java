@@ -18,8 +18,8 @@ public class TesterLambdaSpeed {
     }
 
     public static String funnyWrittingLambda(String s) {
-        return IntStream.range(0, s.toCharArray().length)
-                .mapToObj((int i ) -> (i % 2 == 0) ? s.substring(i, i + 1).toUpperCase() : s.substring(i, i + 1).toLowerCase())
+        return IntStream.range(0, s.length())
+                .mapToObj(i -> (i % 2 == 0) ? s.substring(i, i + 1).toUpperCase() : s.substring(i, i + 1).toLowerCase())
                 .collect(Collectors.joining());
 
     }
