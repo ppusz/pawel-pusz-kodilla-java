@@ -1,4 +1,5 @@
 include 'kodilla-testing'
 include 'bbb'
 include 'kodilla-stream'
+include 'kodilla-rps'
 
