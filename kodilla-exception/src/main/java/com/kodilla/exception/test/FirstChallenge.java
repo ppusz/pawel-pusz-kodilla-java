@@ -22,6 +22,8 @@ public class FirstChallenge {
             System.out.println(result);
         } catch (ArithmeticException e) {
             System.out.println(e + "\nDivide by zero. We do impossible things but not this one...");
+        } finally {
+            System.out.println("Executing code independently from exceptions occurrence (like closing / logging etc.). ");
         }
     }
 }
