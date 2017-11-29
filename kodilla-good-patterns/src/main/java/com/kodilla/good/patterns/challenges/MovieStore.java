@@ -30,8 +30,8 @@ class MovieStore {
         return booksTitlesWithTranslations;
     }
 
-    public String getMoviesAsStringLine(MovieStore movieStore) {
-        return movieStore.getMovies().entrySet().stream()
+    public String getMoviesAsStringLine() {
+        return this.getMovies().entrySet().stream()
                 .flatMap(entry -> entry.getValue().stream())
                 .collect(Collectors.joining("!"));
     }
