@@ -13,7 +13,8 @@ public class BoardConfig {
         return new TaskList();
     }
 
-    @Bean Board getBoard() {
+    @Bean
+    Board getBoard() {
         return new Board(getTaskList(), getTaskList(), getTaskList());
     }
 
