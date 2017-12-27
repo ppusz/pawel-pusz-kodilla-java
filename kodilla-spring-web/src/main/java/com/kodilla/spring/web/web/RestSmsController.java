@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
+
 @RestController
 public class RestSmsController {
 
@@ -14,9 +16,10 @@ public class RestSmsController {
         System.out.println(sendSmsRequest.toString());
     }
 
-    @GetMapping
-    public void fo() {
-        System.out.println("Hello world!");
+    @GetMapping("/api/sms")
+    public HelloResponse hello()
+    {
+        return new HelloResponse("Hello there!", LocalDateTime.now());
     }
 
 
