@@ -5,6 +5,12 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQuery(
+        name = "Company.retrieveCompaniesWithNamesBeginWith",
+        query = "SELECT * FROM companies WHERE MID(company_name, 1, 3) = :FIRSTTHREECHARACTERS",
+        resultClass = Company.class
+)
+
 @Entity
 @Table(name="COMPANIES")
 public class Company {
