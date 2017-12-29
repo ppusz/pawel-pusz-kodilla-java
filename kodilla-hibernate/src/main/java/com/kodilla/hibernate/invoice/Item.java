@@ -18,7 +18,6 @@ public class Item {
     private BigDecimal value;
     private Invoice invoice;
 
-
     public Item() {
     }
 
