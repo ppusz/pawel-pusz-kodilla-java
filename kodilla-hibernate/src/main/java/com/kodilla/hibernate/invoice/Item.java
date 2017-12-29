@@ -18,7 +18,6 @@ public class Item {
     private BigDecimal value;
     private Invoice invoice;
 
-
     public Item() {
     }
 
@@ -39,10 +38,7 @@ public class Item {
     }
 
     @NotNull
-    @ManyToOne(
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
+    @ManyToOne
     @JoinColumn(name = "PRODUCT_ID")
     public Product getProduct() {
         return product;
@@ -67,10 +63,7 @@ public class Item {
     }
 
     @NotNull
-    @ManyToOne(
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
+    @ManyToOne
     @JoinColumn(name = "INVOICE_ID")
     public Invoice getInvoice() {
         return invoice;
