@@ -10,9 +10,9 @@ public enum Result {
     public static Result getRandomResult(boolean rngBlessingOn) {
         double[] playerWinDrawLoseChances;
         if (rngBlessingOn) {
-            playerWinDrawLoseChances = new double[] {25/100., 25/100., 50/100.};
+            playerWinDrawLoseChances = new double[]{25 / 100., 25 / 100., 50 / 100.};
         } else {
-            playerWinDrawLoseChances = new double[] {1/3., 1/3., 1/3.};
+            playerWinDrawLoseChances = new double[]{1 / 3., 1 / 3., 1 / 3.};
         }
 
         double random = new Random().nextDouble();

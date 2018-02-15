@@ -24,7 +24,7 @@ public enum Move {
             return new Move[]{LIZARD, PAPER};
         }
     },
-    SCISSORS  {
+    SCISSORS {
         public Move[] beats() {
             return new Move[]{PAPER, LIZARD};
         }
@@ -53,12 +53,13 @@ public enum Move {
     };
 
     abstract Move[] beats();
+
     abstract Move[] loses();
 
     public Result getResult(Move move) {
         if (this == move) {
             return DRAW;
-        } else if(Arrays.stream(move.loses())
+        } else if (Arrays.stream(move.loses())
                 .filter(m -> m == move)
                 .count() > 0) {
             return LOSE;
@@ -67,11 +68,11 @@ public enum Move {
         }
     }
 
-    public static Move getComputerMove(Move playerMove, Result playerResult){
+    public static Move getComputerMove(Move playerMove, Result playerResult) {
         if (playerResult == DRAW) {
             return playerMove;
         }
-        Move[] moves = (playerResult == LOSE) ?  playerMove.loses() : playerMove.beats();
+        Move[] moves = (playerResult == LOSE) ? playerMove.loses() : playerMove.beats();
         int randomMove = new Random().nextInt(moves.length);
 
         return moves[randomMove];

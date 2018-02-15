@@ -1,10 +1,13 @@
 package com.kodilla.rps;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 import static com.kodilla.rps.Result.*;
 
-public class RpsGame {
+class RpsGame {
     private List<Round> rounds = new LinkedList<>();
 
     public void playRound(Move playerMove) {
@@ -15,7 +18,7 @@ public class RpsGame {
         System.out.print("Player: " + playerMove + "\t computer: " + computerMove + "\t ");
         if (playerResult == WIN) {
             System.out.println("You win!");
-        } else if (playerResult == LOSE)  {
+        } else if (playerResult == LOSE) {
             System.out.println("You lose!");
         } else {
             System.out.println("It's a draw!");

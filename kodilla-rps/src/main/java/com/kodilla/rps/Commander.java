@@ -75,7 +75,7 @@ public class Commander {
                 displayMenu();
             }
         } else {
-            System.out.println("\"" + command  + "\" is not recognized as a valid command.");
+            System.out.println("\"" + command + "\" is not recognized as a valid command.");
         }
 
         if (Arrays.asList("1", "2", "3", "4", "5").contains(command) && wonRoundsToPlay > rpsGame.getRoundsWon()) {
@@ -99,7 +99,8 @@ public class Commander {
     public void askNameAndWonRoundsQuantity() {
         String scanerLine;
         System.out.print("Enter your name: ");
-        while ((scanerLine = sc.nextLine().trim()).isEmpty()) {}
+        while ((scanerLine = sc.nextLine().trim()).isEmpty()) {
+        }
         playerName = scanerLine;
         System.out.print("Hello " + playerName + ". Please enter limit of won rounds: ");
         do {
@@ -129,9 +130,9 @@ public class Commander {
             } else if (scannerLine.equals("x")) {
                 close = true;
             } else {
-                System.out.println("\"" + scannerLine  + "\" is not recognized as a valid command.");
+                System.out.println("\"" + scannerLine + "\" is not recognized as a valid command.");
             }
         }
-        while ( !newGame && !close);
+        while (!newGame && !close);
     }
 }

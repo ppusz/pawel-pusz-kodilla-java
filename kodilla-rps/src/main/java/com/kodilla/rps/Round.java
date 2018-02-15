@@ -17,6 +17,6 @@ public final class Round {
 
     @Override
     public String toString() {
-        return "You: " + player + " \t computer: " + computer + " result: " + result ;
+        return "You: " + player + " \t computer: " + computer + " result: " + result;
     }
 }
