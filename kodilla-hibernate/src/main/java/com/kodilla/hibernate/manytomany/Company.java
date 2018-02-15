@@ -10,7 +10,10 @@ import java.util.List;
         query = "SELECT * FROM companies WHERE MID(company_name, 1, 3) = :FIRSTTHREECHARACTERS",
         resultClass = Company.class
 )
-
+@NamedQuery(
+        name = "Company.retrieveCompaniesWithNamesContaining",
+        query = "FROM Company WHERE name like concat('%',:NAME_PART,'%')"
+)
 @Entity
 @Table(name="COMPANIES")
 public class Company {
