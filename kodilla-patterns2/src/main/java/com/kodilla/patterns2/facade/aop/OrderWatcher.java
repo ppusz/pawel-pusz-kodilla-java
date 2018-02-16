@@ -1,8 +1,6 @@
 package com.kodilla.patterns2.facade.aop;
 
 import com.kodilla.patterns2.facade.api.OrderDto;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
@@ -20,6 +18,4 @@ public class OrderWatcher {
     public void logOrderExecution(OrderDto order, Long userId) {
         LOGGER.info("processOrder executed for user: " + userId);
     }
-
-
 }
