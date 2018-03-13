@@ -13,16 +13,16 @@ public class EBayTestingApp {
     private final static String SEARCH_TERM = "Laptop";
 
     public static void main(String[] args) {
-        WebDriver driverFirefox = WebDriverConfig.getDriver(WebDriverConfig.FIREFOX);
-        driverFirefox.get(EBAY_PAGE_ADRESS);
-        WebElement searchFieldFirefox = driverFirefox.findElement(By.id(SEARCHFIELD_ID));
-        searchFieldFirefox.sendKeys(SEARCH_TERM);
-        searchFieldFirefox.submit();
+        WebDriver webDriver = WebDriverConfig.getDriver(WebDriverConfig.FIREFOX);
+        webDriver.get(EBAY_PAGE_ADRESS);
+        WebElement searchField = webDriver.findElement(By.id(SEARCHFIELD_ID));
+        searchField.sendKeys(SEARCH_TERM);
+        searchField.submit();
 
-        WebDriver driverChrome = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
-        driverChrome.get(EBAY_PAGE_ADRESS);
-        WebElement searchFieldChrome = driverChrome.findElement(By.name(SEARCHFIELD_NAME));
-        searchFieldChrome.sendKeys(SEARCH_TERM);
-        searchFieldChrome.submit();
+        webDriver = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
+        webDriver.get(EBAY_PAGE_ADRESS);
+        searchField = webDriver.findElement(By.name(SEARCHFIELD_NAME));
+        searchField.sendKeys(SEARCH_TERM);
+        searchField.submit();
     }
 }
